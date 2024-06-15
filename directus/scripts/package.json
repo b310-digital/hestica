@@ -11,6 +11,8 @@
 	"scripts": {
 		"ts:check": "tsc --noEmit",
     "schema-download": "npx ts-node download-schema.ts",
+		"schema-upload": "npx ts-node upload-schema.ts",
+		"permissions-upload": "npx ts-node upload-permissions.ts",
 		"permissions-download": "npx ts-node download-permissions.ts"
 	},
   "dependencies": {

@@ -18,7 +18,7 @@
       "recipes.source": "Quelle",
       "recipes.none.selected": "Kein Rezept ausgewählt",
       "recipes.source.none": "Keine Quelle angegeben",
-      "recipes.yield.none": "Keine Portionen angegeben",
+      "recipes.yield.none": "-",
       "recipes.erorrs.file.size": "Datei zu groß",
       "instructions": "Zubereitung",
       "ingredients": "Zutaten",

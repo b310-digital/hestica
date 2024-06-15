@@ -5,7 +5,38 @@ Host your own recipe management system with react native web app and CMS.
 
 Derived from hestia: https://de.wikipedia.org/wiki/Hestia
 
+## Installation
+First, adjust the values in the .env file by copying .env.default:
+```
+cp .env.default .env
+```
 
+Then start the containers with:
+
+```
+docker compose up -d
+```
+
+Then, visit directus on http://localhost:8055
+and login with the provided credentials in the .env file.
+
+Next, create an access token for the administor and enter it in the .env file. Restart the app container
+
+```
+docker compose up app -d --force-recreate
+```
+
+### Create directus schema and permissions
+Login to the container and upload the schema:
+```
+docker compose exec app bash
+cd ../directus/scripts
+yarn install
+yarn run schema-upload
+yarn run permissions-upload
+```
+
+Thats it! Visit the app on 
 ## Development with Directus
 ### Env
 `EXTENSION_MAX_PAYLOAD_SIZE` in mb

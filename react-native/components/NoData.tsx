@@ -1,12 +1,13 @@
 import React from "react";
 import image from "../assets/dionysus.png";
-import { View, Image, Text } from "react-native";
+import { View, Text } from "react-native";
+import { Image } from "expo-image";
 
 export default function NoData({ children }: { children: React.ReactElement }) {
   return (
     <View style={{ marginTop: 50 }}>
       <Image
-        src={image}
+        source={image}
         style={{
           width: 300,
           height: 280,
