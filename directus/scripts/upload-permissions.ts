@@ -16,15 +16,13 @@ main();
 async function uploadSnapshot(snapshot: any, collection: string) {
 	const URL = `${BASE_DIRECTUS_URL}/${collection}?access_token=${BASE_ACCESS_TOKEN}`;
 
-	const result = await fetch(URL, {
+	await fetch(URL, {
 		method: 'POST',
 		body: snapshot,
 		headers: {
 			'Content-Type': 'application/json',
 		},
 	});
-
-	console.log(await result.json())
 }
 
 async function readPermissions(): Promise<any> {
