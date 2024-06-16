@@ -11,7 +11,7 @@ First, adjust the values in the .env file by copying .env.default:
 cp .env.default .env
 ```
 
-Then start the containers with:
+Start the containers with:
 
 ```
 docker compose up -d

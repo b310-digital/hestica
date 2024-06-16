@@ -151,7 +151,7 @@ export default function RecipeDetailScreen() {
         return (
           <List.Item
             key={`ingredient-${ingredient.id}`}
-            title={`${ingredient?.item?.name}${ingredient.amount || ingredient.unit ? ":" : ""} ${formatter.format(ingredient.amount || 0) || ""} ${ingredient.unit || ""}${ingredient.description ? `, ${ingredient.description}` : ""}`}
+            title={`${ingredient?.item?.name}${ingredient.amount || ingredient.unit ? ":" : ""} ${formatter.format(ingredient.amount || 0) || ""} ${t(`units.${ingredient.unit}`) || ""}${ingredient.description ? `, ${ingredient.description}` : ""}`}
             style={{ borderTopWidth: 1, borderColor: theme.colors.border }}
           />
         );

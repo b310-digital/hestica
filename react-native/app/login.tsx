@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { Link, useRouter } from "expo-router";
 import { Button, HelperText, TextInput } from "react-native-paper";
 import { theme } from "../theme";
@@ -70,7 +70,7 @@ export default function LoginScreen() {
   // Outline mode has some issues with prefilled values
   // https://github.com/callstack/react-native-paper/issues/3757
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={{ flex: 1, marginBottom: 20 }}>
         <Image
           source={logo}
@@ -150,6 +150,6 @@ export default function LoginScreen() {
           <Trans i18nKey="signup" />
         </Button>
       </Link>
-    </View>
+    </ScrollView>
   );
 }
