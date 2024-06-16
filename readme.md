@@ -36,7 +36,7 @@ yarn run schema-upload
 yarn run permissions-upload
 ```
 
-Thats it! Visit the app on 
+Thats it! Visit the app on http://localhost:8081/
 ## Development with Directus
 ### Env
 `EXTENSION_MAX_PAYLOAD_SIZE` in mb
