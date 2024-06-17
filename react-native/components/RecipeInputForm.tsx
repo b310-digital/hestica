@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState, useCallback } from "react";
+import { ReactElement, useEffect, useState, useCallback, useRef } from "react";
 import { View, Text, GestureResponderEvent, ScrollView } from "react-native";
 import {
   Button,
@@ -75,6 +75,7 @@ export const RecipeInputForm = ({
     createIngredient,
   } = useIngredients();
   const { t } = useTranslation();
+  const scrollRef = useRef();
 
   const {
     control,
@@ -103,6 +104,13 @@ export const RecipeInputForm = ({
     control,
     name: "instructions",
   });
+
+  const scrollToTop = () => {
+    scrollRef?.current?.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  };
 
   const loadServerErrors = useCallback(() => {
     if (!serverErrors || serverErrors.length === 0) return;
@@ -301,7 +309,7 @@ export const RecipeInputForm = ({
 
   return (
     <PaperProvider>
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} ref={scrollRef}>
         <IngredientCreator
           isVisible={isIngredientCreatorVisible}
           onClose={() => setIsIngredientCreatorVisible(false)}
@@ -492,8 +500,9 @@ export const RecipeInputForm = ({
           />
         </View>
         <Button
-          onPress={handleSubmit((data: RecipeFormValues) =>
-            onSuccessfulSubmit(data, dirtyFields),
+          onPress={handleSubmit(
+            (data: RecipeFormValues) => onSuccessfulSubmit(data, dirtyFields),
+            scrollToTop,
           )}
           theme={theme}
           mode="contained"
