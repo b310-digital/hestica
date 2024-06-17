@@ -1,0 +1,11 @@
+directus/uploads/
+directus/extensions/directus-extension-endpoint-recipe-add-image/node_modules
+directus/extensions/directus-extension-endpoint-recipe-add-image/dist/*
+directus/extensions/directus-extension-hook-recipe-delete-image/node_modules
+directus/extensions/directus-extension-hook-recipe-delete-image/dist/*
+directus/extensions/directus-extension-hook-user-delete-files/node_modules
+directus/extensions/directus-extension-hook-user-delete-files/dist/*
+directus/scripts/node_modules
+directus/scripts/dist/*
+.env
+.DS_Store

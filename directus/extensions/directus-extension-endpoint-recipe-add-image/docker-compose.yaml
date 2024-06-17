@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    stdin_open: true
+    ports:
+      - 19001:19001
+      - 19002:19002
+      - 19006:19006
+    volumes:
+      - .:/opt/directus_extension
